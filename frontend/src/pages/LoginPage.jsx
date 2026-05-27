@@ -6,7 +6,6 @@ import { setAuthData } from '../utils/storage';
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   
@@ -34,11 +33,6 @@ const LoginPage = () => {
       return;
     }
 
-    if (password !== confirmPassword) {
-      setError('Passwords do not match.');
-      return;
-    }
-
     try {
       setLoading(true);
       const data = await loginOrRegister(email, password);
@@ -63,7 +57,7 @@ const LoginPage = () => {
     <div className="login-container">
       <div className="login-card glass-panel">
         <h2>Welcome Back</h2>
-        <p className="subtitle">Login or register to continue</p>
+        <p className="subtitle">Login to continue</p>
         
         {error && <div className="error-message">{error}</div>}
         
@@ -92,20 +86,8 @@ const LoginPage = () => {
             />
           </div>
           
-          <div className="form-group">
-            <label htmlFor="confirmPassword">Confirm Password</label>
-            <input
-              type="password"
-              id="confirmPassword"
-              placeholder="••••••••"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              required
-            />
-          </div>
-          
           <button type="submit" className="btn-primary full-width" disabled={loading}>
-            {loading ? 'Processing...' : 'Login / Register'}
+            {loading ? 'Processing...' : 'Login'}
           </button>
         </form>
       </div>
