@@ -5,7 +5,7 @@ from models.auth_model import AuthRequest
 from utils.serializer import serialize_doc
 
 def login_or_register(request: AuthRequest):
-    PREDEFINED_EMAIL = "admin@example.com"
+    PREDEFINED_EMAIL = "Virtualanadmin@gmail.com"
     PREDEFINED_PASSWORD = "password123"
 
     if request.email == PREDEFINED_EMAIL and request.password == PREDEFINED_PASSWORD:

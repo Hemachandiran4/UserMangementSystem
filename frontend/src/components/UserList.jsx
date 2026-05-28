@@ -30,9 +30,7 @@ const UserList = ({ users, onEdit, onDelete, searchTerm }) => {
                   <td>{user.name}</td>
                   <td>{user.email}</td>
                   <td>{user.age}</td>
-                  <td>
-                    <span className="role-badge">{user.role}</span>
-                  </td>
+                  <td><span className="role-badge">{user.role}</span></td>
                   <td>{user.contact_number || '-'}</td>
                   <td>{user.state || '-'}</td>
                   <td>{user.country || '-'}</td>
